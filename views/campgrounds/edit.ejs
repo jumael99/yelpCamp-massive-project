@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+</head>
+<body>
+<h1>Edit campground</h1>
+<form action="/campgrounds/<%=foundCamp._id%>?_method=put" method="POST">
+    <div>
+        <label for="name">Title:  </label>
+        <input id="name" type="text" name="campgroundInfo[title]" value="<%=foundCamp.title%>">
+    </div>
+    <div>
+        <label for="name">Location:  </label>
+        <input id="name" type="text" name="campgroundInfo[location]" value="<%=foundCamp.location%>">
+    </div>
+    <button type="submit">Update campground</button>
+
+</form>>
+<a href="/campgrounds" > All campgrounds </a>
+</body>
+</html>
