@@ -3,9 +3,10 @@ const Schema = mongoose.Schema;
 
 const campgroundSchema = new Schema({
     title: String,
-    price: String,
+    price: Number,
     description: String,
-    location: String
+    location: String,
+    image: String,
 }, {timestamps:true});
 
 module.exports = mongoose.model('CampGround', campgroundSchema);

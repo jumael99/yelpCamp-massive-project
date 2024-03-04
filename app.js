@@ -26,6 +26,11 @@ app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
 
+app.get('/', (req,res)=>{
+    res.send('This is home');
+})
+
+
 //@desc campground info
 //@route GET /campgrounds
 //@access public

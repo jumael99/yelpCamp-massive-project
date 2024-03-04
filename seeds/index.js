@@ -12,14 +12,17 @@ mongoose.connect('mongodb://localhost:27017/yelp-camp')
     });
 
 const sample = array => array[Math.floor(Math.random() * array.length)];
-
+const randPrice = () => Math.floor(Math.random() * 20) + 10;
 const seedDB = async () => {
     await CampGround.deleteMany();
     for(let i = 0;i < 50;i++) {
-        const rand1000 = Math.floor(Math.random() * 1000)
+        const rand1000 = Math.floor(Math.random() * 1000);
         await CampGround.create({
+            title: `${sample(descriptors)} ${sample(places)}`,
+            price: randPrice(),
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi culpa doloremque ea illum iusto natus obcaecati possimus, sed vero.',
             location: `${cities[rand1000].city}, ${cities[rand1000].state}`,
-            title: `${sample(descriptors)} ${sample(places)}`
+            image: 'https://picsum.photos/640/360',
         })
     }
 }
