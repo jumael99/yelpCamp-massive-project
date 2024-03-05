@@ -1,14 +1,38 @@
 <% layout('layouts/boilerplate') %>
-<h1>New Campground add</h1>
-<form action="/campgrounds" method="POST">
-    <div>
-        <label for="name">Title:  </label>
-        <input id="name" type="text" name="campgroundInfo[title]">
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <form action="/campgrounds" method="POST" class="col-md-6">
+            <h1>New Campground</h1>
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="campgroundInfo[title]" placeholder="Hungry Horse Camp">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" class="form-control" id="location" name="campgroundInfo[location]" placeholder="Whitefish, Montana">
+            </div>
+
+            <div class="form-group">
+                <label for="image">Image URL</label>
+                <input type="text" class="form-control" id="image" name="campgroundInfo[image]" placeholder="https://images.unsplash.com/photo-...">
+            </div>
+
+            <div class="form-group">
+                <label for="price">Campground Price</label>
+                <input type="number" class="form-control" id="price" name="campgroundInfo[price]" placeholder="$16">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="campgroundInfo[description]" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Add Campground</button>
+        </form>
     </div>
-    <div>
-        <label for="name">Location:  </label>
-        <input id="name" type="text" name="campgroundInfo[location]">
-    </div>
-    <button type="submit">Add campground</button>
-</form>>
-<a href="/campgrounds">All campgrounds</a>
+</div>
+
+<a href="/campgrounds" class="d-block text-center mt-4">All Campgrounds</a>

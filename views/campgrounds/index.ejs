@@ -1,14 +1,23 @@
-<!--Just give the folder name where the boilerplate is -->
-
-<% layout('layouts/boilerplate') %>
-    <h1>All campground list</h1>
-    <div><a href="/campgrounds/new">Create new campground</a></div>
-    <ul>
-        <% for (let camps of campgrounds) { %>
-            <li>
-                <a href="/campgrounds/<%=camps._id%>">
-                    <%=camps.title%>
-                </a>
-            </li>
+<% layout('layouts/boilerplate') %> <!-- Ensure this layout includes Bootstrap -->
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-12">
+            <h1 >All Campground List</h1>
+            <a href="/campgrounds/new" class="btn btn-primary">Create New Campground</a>
+        </div>
+    </div>
+    <div class="row">
+        <% for(let camps of campgrounds) { %>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="<%= camps.image %>" class="card-img-top" alt="<%= camps.title %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= camps.title %></h5>
+                        <p class="card-text"><%= camps.description %></p>
+                        <a href="/campgrounds/<%= camps._id %>" class="btn btn-primary">View Campground</a>
+                    </div>
+                </div>
+            </div>
         <% } %>
-    </ul>
+    </div>
+</div>

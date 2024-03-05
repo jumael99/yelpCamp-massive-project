@@ -1,16 +1,26 @@
 <% layout('layouts/boilerplate') %>
-    <img src="<%=foundCamp.image%>" alt="">
-    <h1>
-        <%=foundCamp.title%>
-    </h1>
-    <p>
-        <%=foundCamp.location%>
-    </p>
-    <footer>
-        <a href="/campgrounds">Show all campground</a>
-    </footer>
-    <form action="/campgrounds/<%=foundCamp._id%>?_method=DELETE" method="POST">
-        <button>Delete</button>
-    </form>
-    <br>
-    <a href="/campgrounds/<%=foundCamp._id%>/edit" > Edit campground info</a>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="<%=foundCamp.image%>" class="img-fluid rounded" alt="">
+        </div>
+        <div class="col-md-6">
+            <h1 class="display-4">
+                <%=foundCamp.title%>
+            </h1>
+            <p class="lead">
+                <%=foundCamp.location%>
+            </p>
+            <p>
+                <%=foundCamp.description%>
+            </p>
+            <a href="/campgrounds" class="btn btn-primary">Show all campground</a>
+            <hr>
+            <form action="/campgrounds/<%=foundCamp._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+            <br>
+            <a href="/campgrounds/<%=foundCamp._id%>/edit" class="btn btn-warning mb-3"> Edit campground info</a>
+        </div>
+    </div>
+</div>

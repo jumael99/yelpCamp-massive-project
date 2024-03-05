@@ -1,16 +1,40 @@
-<!doctype html>
-<% layout('layouts/boilerplate') %>
-<h1>Edit campground</h1>
-<form action="/campgrounds/<%=foundCamp._id%>?_method=put" method="POST">
-    <div>
-        <label for="name">Title:  </label>
-        <input id="name" type="text" name="campgroundInfo[title]" value="<%=foundCamp.title%>">
-    </div>
-    <div>
-        <label for="name">Location:  </label>
-        <input id="name" type="text" name="campgroundInfo[location]" value="<%=foundCamp.location%>">
-    </div>
-    <button type="submit">Update campground</button>
 
-</form>>
-<a href="/campgrounds" > All campgrounds </a>
+<% layout('layouts/boilerplate') %>
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <form action="/campgrounds/<%=foundCamp._id%>?_method=put" method="POST" class="col-md-6">
+            <h1>Edit Campground</h1>
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="campgroundInfo[title]" value="<%=foundCamp.title%>">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" class="form-control" id="location" name="campgroundInfo[location]" value="<%=foundCamp.location%>">
+            </div>
+
+            <div class="form-group">
+                <label for="image">Image URL</label>
+                <input type="text" class="form-control" id="image" name="campgroundInfo[image]" value="<%=foundCamp.image%>">
+            </div>
+
+            <div class="form-group">
+                <label for="price">Campground Price</label>
+                <input type="number" class="form-control" id="price" name="campgroundInfo[price]" placeholder="<%=foundCamp.price%>" value="<%=foundCamp.price%>">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="campgroundInfo[description]" rows="3"><%=foundCamp.description%></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Edit Campground</button>
+
+            <a class="btn btn-muted mt-3" href="/campgrounds/<%=foundCamp._id%>">Go Back</a>
+
+        </form>
+    </div>
+</div>
+
